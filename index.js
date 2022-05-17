@@ -35,7 +35,7 @@ app.use(
         "https://localhost:4200",
         "https://localhost:5500",
         "http://127.0.0.1:5500",
-        "https://upgrade-jobs-app.vercel.app",
+        "https://front-delivery-finallly.vercel.app/",
       ],
     ],
     credentials: true,
