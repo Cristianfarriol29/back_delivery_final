@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { connect } = require("./src/utils/database/db");
-const { configCloudinary } = require('./src/utils/cloudinary/config');
+const { configCloudinary } = require("./src/utils/cloudinary/config");
 
 const beverageRoutes = require("./src/api/products/beverages/beverages.routes");
 const dessertRoutes = require("./src/api/products/desserts/desserts.routes");
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:4200"],
+    origin: ["*"],
     credentials: true,
   })
 );
@@ -58,11 +58,11 @@ app.use("*", (req, res, next) => {
   return next(error);
 });
 
-app.use('*', (req, res, next) => {
-    const error = new Error();
-    error.status = 404;
-    error.message = 'Route not found';
-    return next(error);
+app.use("*", (req, res, next) => {
+  const error = new Error();
+  error.status = 404;
+  error.message = "Route not found";
+  return next(error);
 });
 
 app.use((error, req, res, next) => {
