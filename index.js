@@ -29,15 +29,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: [
-      [
-        "http://localhost:3000",
-        "https://localhost:4200",
-        "https://localhost:5500",
-        "http://127.0.0.1:5500",
-        "https://front-delivery-finallly.vercel.app/",
-      ],
-    ],
+    origin: ["*"],
     credentials: true,
   })
 );
